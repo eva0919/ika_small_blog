@@ -9,9 +9,14 @@
 <body>
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
+  	<ul class="nav navbar-nav navbar-left">
+  		<% if current_user %>
+  		<a href='/'><p class="navbar-text nav_name">Hi,<%= current_user.username%>!</p></a>
+  		<% end %>
+  	</ul>
 	  <ul class="nav navbar-nav navbar-right">
 	  	<% if current_user %>
-	  		<p class="navbar-text nav_name">Hi,<%= current_user.username%>!</p>
+	  		<li><%= link_to '新增文章', {:controller=>'page',:action =>'new_post'} %></li> 
 	  		<li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li> 
 	    <% else %>
 	      	<li><%= link_to('註冊', new_registration_path(:user)) %></li>

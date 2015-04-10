@@ -1,0 +1,11 @@
+<%= form_tag("/save_new_post",method: "post") do%>
+<div class='new_post_title'>
+	Title:
+	<%=text_field_tag 'title'%>
+</div>
+<div class='new_post_context'>
+	Context:<br>
+	<%=text_area_tag 'context', nil, rows: 20, cols: 50%>
+</div>
+<%= submit_tag "發表" , class: "btn btn-info"%>
+<%end%>

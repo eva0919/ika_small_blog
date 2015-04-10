@@ -1,3 +1,17 @@
 
 <div><h3>Posts List</h3></div>
 <%= will_paginate @posts%>
+	<%@posts.each do |post|%>
+		<a href="/post/<%=post.id%>">
+			<div class='post_list_item'> 
+				<%= post.title%>
+				<div class='col-xs-offset-10 col-xs-2 lits_item_icon'>
+					<% if current_user && (current_user.id == post.user_id )%>
+						<%= link_to '編輯', {:controller=>'page',:action =>'edit_post',:id =>post.id}%>
+						<%= link_to '刪除', {:controller=>'page',:action =>'delete_post',:id =>post.id}%>
+					<%end%>
+				</div>
+			</div>
+		</a>
+	<%end%>
+<%= will_paginate @posts%>

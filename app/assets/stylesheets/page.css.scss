@@ -2,5 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .navbar-text.nav_name{
-	color: blue;
+	// color: blue;
+}
+
+.post_list_item{
+	padding: 20px;
+	border-bottom: 1px solid;
+	color: #95AFBA;
+	&:hover {
+		cursor: pointer;
+		color: #3F7CAC;
+	}
+	.lits_item_icon{
+		margin-top: -20px;
+		.glyphicon{
+			font-size: 20px;
+			margin-left: 5px;
+		}
+	} 
+}
+
+.view_post{
+	h3{
+		color: #3F7CAC;
+	}
 }

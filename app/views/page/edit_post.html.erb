@@ -1,0 +1,12 @@
+<%= form_tag("/save_edit_post",method: "post") do%>
+<div class='new_post_title'>
+	Title:
+	<%=text_field_tag 'title',@post.title%>
+</div>
+<div class='new_post_context'>
+	Context:<br>
+	<%=text_area_tag 'context', @post.context, rows: 20, cols: 50%>
+</div>
+<%= hidden_field_tag :id , @post.id %>
+<%= submit_tag "修改" , class: "btn btn-info"%>
+<%end%>

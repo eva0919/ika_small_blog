@@ -1,0 +1,9 @@
+<div class='view_post'>
+	<h3><%= @title%> </h3>
+	<hr>
+	<div>
+		<% @context.each do |context|%>
+			<p><%= context%></p>
+		<%end%>
+	</div>
+</div>
