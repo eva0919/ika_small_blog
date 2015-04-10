@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   get '/page/edit_post' => 'page#edit_post'
   get '/page/delete_post' => 'page#delete_post'
   get '/post/:id' => 'page#view_post'
+  post '/comment' => 'page#save_comment'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

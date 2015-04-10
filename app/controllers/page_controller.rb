@@ -49,6 +49,19 @@ class PageController < ApplicationController
 	end
 
 
+	def save_comment
+		@comment = Comment.new
+		@comment.context = params[:context]
+		@comment.post_id = params[:id]
+		if current_user
+			@comment.user_id = current_user.id
+		else
+			@comment.user_id = 0
+		end
+		@comment.save
+		redirect_to action: "view_post", id:params[:id]
+	end
+
 
 	def login_required
 		if current_user.blank?
