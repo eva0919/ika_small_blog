@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  # devise_for :admin_users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  
+  devise_config = ActiveAdmin::Devise.config
+  devise_config[:controllers][:omniauth_callbacks] = 'omniauth_callbacks'
+  devise_for :admin_users, devise_config
   ActiveAdmin.routes(self)
   devise_for :users
+  # devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

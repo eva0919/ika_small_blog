@@ -29,6 +29,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'yaml_db'
+gem 'omniauth-google-oauth2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
